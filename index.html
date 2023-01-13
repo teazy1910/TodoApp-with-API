@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Todo App with API</title>
+  </head>
+  <body>
+    <header>
+      <h1>Todo APP</h1>
+    </header>
+    <main>
+      <div class="filterContainer">
+        <input type="radio" name="all" value="All" class="all" checked />
+        <label for="all">All</label>
+        <input type="radio" name="open" value="Open" class="open" />
+        <label for="open">Open</label>
+        <input type="radio" name="done" value="Done" class="done" />
+        <label for="done">Done</label>
+      </div>
+
+      <section class="btnContainer">
+        <input type="text" name="input" class="input" id="inputField" />
+        <button type="submit" class="submit" id="addBtn">Add Todo</button>
+        <button type="submit" class="remove" id="removeBtn">
+          Remove Done Todos
+        </button>
+      </section>
+
+      <section class="listContainer">
+        <ul class="lists" id="list"></ul>
+      </section>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>

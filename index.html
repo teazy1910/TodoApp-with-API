@@ -9,18 +9,33 @@
   </head>
   <body>
     <header>
-      <h1>Todo APP</h1>
+      <h1 class="header-title">Todo APP</h1>
     </header>
     <main>
-      <section class="btnContainer">
+      <section class="input-container">
         <input type="text" name="input" class="input" id="inputField" />
-        <button type="submit" class="submit" id="addBtn">Add Todo</button>
-        <button type="submit" class="remove" id="removeBtn">
-          Remove Done Todos
-        </button>
+        <button type="submit" class="button submit" id="addBtn">Add</button>
       </section>
 
-      <section class="listContainer">
+      <section>
+        <h2>Filter</h2>
+        <fieldset class="filter-container">
+          <input type="radio" name="filter" id="filterAll" value="all""
+          class="radioBtn"/>
+          <label for="filterAll">All</label>
+          <input type="radio" name="filter" id="filterOpen" value="open""
+          class="radioBtn"/>
+          <label for="filterOpen">Open</label>
+          <input type="radio" name="filter" id="filterDone" value="done""
+          class="radioBtn"/>
+          <label for="filterDone">Done</label>
+        </fieldset>
+      </section>
+
+      <section class="list-container">
+        <button type="submit" class="button remove" id="removeBtn">
+          Remove Done Todos
+        </button>
         <ul class="lists" id="list"></ul>
       </section>
     </main>

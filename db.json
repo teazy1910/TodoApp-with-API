@@ -1,24 +1,19 @@
 {
   "todos": [
     {
-      "description": "Learn React",
+      "description": "Learn CSS",
       "done": true,
-      "id": 2
+      "id": 5
     },
     {
       "description": "Learn HTML",
-      "done": false,
-      "id": 3
-    },
-    {
-      "description": "Learn JavaScript",
       "done": true,
-      "id": 4
+      "id": 6
     },
     {
-      "description": "Learn CSS",
+      "description": "dada",
       "done": false,
-      "id": 5
+      "id": 7
     }
   ]
 }

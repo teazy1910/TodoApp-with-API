@@ -3,10 +3,6 @@ const removeBtn = document.querySelector("#removeBtn");
 const input = document.querySelector("#inputField");
 const todoList = document.querySelector("#list");
 
-const filterDone = document.querySelector("#done");
-const filterAll = document.querySelector("#all");
-const filterOpen = document.querySelector("#open");
-
 let todos = [];
 
 function loadTodos() {
@@ -26,10 +22,6 @@ function renderTodos() {
 
     const text = document.createTextNode(todo.description);
 
-    if (todo.done === true) {
-      input.checked = true;
-    }
-
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     checkbox.id = todo.id;
@@ -42,7 +34,57 @@ function renderTodos() {
     checkbox.addEventListener("change", update);
   });
 }
-// klick button, new todo ans backend posten,
+
+// Filter Container
+const todoFilter = document.querySelector(".filter-container");
+
+// Filter Value für das gerade ausgewählte Element
+const filterChecked = document.querySelector(
+  "input[type='radio']:checked"
+).value;
+
+function todoIsChecked() {
+  const checkedValues = document.querySelector(
+    "input[type='checkbox']:checked"
+  );
+  for (let i = 0; i < checkedValues.length; i++) {
+    console.log(checkedValues[i]);
+  }
+}
+
+// gecheckte Todos iterieren
+const checkedTodos = document.querySelector("input[type='checkbox']:checked");
+
+for (let i = 0; i < checkedTodos.length; i++) {
+  checkedValues[i];
+}
+// Filter auswählen (done, all, open)
+
+function filterTodos() {
+  if (filterValueChecked === "all") {
+    return;
+  } else if (filterValueChecked === "done") {
+  }
+}
+
+/* 
+Funktion für: 
+- all, open, done => target?
+- value der einzelnen filter
+- anzeigen der jeweiligen todos
+
+
+
+Funktion für:
+- Auswahl checkbox
+- checkbox gechecked?
+ja? -> filter: Done + All
+nein? -> filter: Open + All
+
+
+*/
+
+// klick button, new todo ans backend,
 // response successful -> rendern
 submitBtn.addEventListener("click", () => {
   const todoText = input.value;

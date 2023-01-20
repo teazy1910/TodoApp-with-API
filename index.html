@@ -18,10 +18,10 @@
       </section>
 
       <section>
-        <h2>Filter</h2>
-        <fieldset class="filter-container">
+        <h2>Filter Todos</h2>
+        <div class="filter-container">
           <input type="radio" name="filter" id="filterAll" value="all""
-          class="radioBtn"/>
+          class="radioBtn" checked/>
           <label for="filterAll">All</label>
           <input type="radio" name="filter" id="filterOpen" value="open""
           class="radioBtn"/>
@@ -29,13 +29,14 @@
           <input type="radio" name="filter" id="filterDone" value="done""
           class="radioBtn"/>
           <label for="filterDone">Done</label>
-        </fieldset>
+        </div>
       </section>
+      <button type="submit" class="button remove" id="removeBtn">
+        Remove Done Todos
+      </button>
 
       <section class="list-container">
-        <button type="submit" class="button remove" id="removeBtn">
-          Remove Done Todos
-        </button>
+        <p>Your Todos</p>
         <ul class="lists" id="list"></ul>
       </section>
     </main>

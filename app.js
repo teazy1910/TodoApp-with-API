@@ -17,7 +17,7 @@ function loadTodos() {
 // function to render todos from the backend to browser
 function renderTodos() {
   todoList.innerHTML = "";
-  todos.forEach((todo) => {
+  todos.forEach(function (todo) {
     const newLi = document.createElement("li");
 
     const text = document.createTextNode(todo.description);
@@ -28,61 +28,47 @@ function renderTodos() {
     checkbox.checked = todo.done;
 
     newLi.append(checkbox, text);
-
     todoList.appendChild(newLi);
+
+    if (todo.done === true) {
+      newLi.classList.add("done");
+    }
 
     checkbox.addEventListener("change", update);
   });
 }
 
-// Filter Container
-const todoFilter = document.querySelector(".filter-container");
-
-// Filter Value für das gerade ausgewählte Element
-const filterChecked = document.querySelector(
-  "input[type='radio']:checked"
-).value;
-
-function todoIsChecked() {
-  const checkedValues = document.querySelector(
-    "input[type='checkbox']:checked"
-  );
-  for (let i = 0; i < checkedValues.length; i++) {
-    console.log(checkedValues[i]);
-  }
+// Filter Todos
+function filterTodo(e) {
+  const filteredTodos = [...todoList.children];
+  filteredTodos.forEach(function (todo) {
+    switch (e.target.value) {
+      case "all":
+        todo.style.display = "";
+        break;
+      case "done":
+        if (todo.classList.contains("done")) {
+          todo.style.display = "";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+      case "open":
+        if (!todo.classList.contains("done")) {
+          todo.style.display = "";
+        } else {
+          todo.style.display = "none";
+        }
+        break;
+    }
+  });
 }
 
-// gecheckte Todos iterieren
-const checkedTodos = document.querySelector("input[type='checkbox']:checked");
-
-for (let i = 0; i < checkedTodos.length; i++) {
-  checkedValues[i];
+// DOM RadioButtons + Eventlistener
+const radioBtns = document.querySelectorAll("input[type='radio']");
+for (const radioBtn of radioBtns) {
+  radioBtn.addEventListener("change", filterTodo);
 }
-// Filter auswählen (done, all, open)
-
-function filterTodos() {
-  if (filterValueChecked === "all") {
-    return;
-  } else if (filterValueChecked === "done") {
-  }
-}
-
-/* 
-Funktion für: 
-- all, open, done => target?
-- value der einzelnen filter
-- anzeigen der jeweiligen todos
-
-
-
-Funktion für:
-- Auswahl checkbox
-- checkbox gechecked?
-ja? -> filter: Done + All
-nein? -> filter: Open + All
-
-
-*/
 
 // klick button, new todo ans backend,
 // response successful -> rendern

@@ -1,4 +1,4 @@
-# todo-api
+# Todo with Api
 
 The todo-api is a demo api to list, get, create, update and delete todos.
 

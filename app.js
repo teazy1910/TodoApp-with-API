@@ -28,10 +28,12 @@ function renderTodos() {
     checkbox.checked = todo.done;
 
     newLi.append(checkbox, text);
+    newLi.classList.add("todo-item");
     todoList.appendChild(newLi);
 
     if (todo.done === true) {
       newLi.classList.add("done");
+      newLi.style.textDecoration = "line-through";
     }
 
     checkbox.addEventListener("change", update);
